@@ -11,7 +11,18 @@
         android:layout_height="?attr/actionBarSize"
         android:background="@color/colorPrimary"
         app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        android:id="@+id/ToobarRegister"/>
+        android:id="@+id/ToobarRegister">
+
+        <!--Icon save-->
+        <ImageView
+            android:id="@+id/imvSave"
+            android:layout_marginRight="10dp"
+            android:layout_gravity="right"
+            android:src="@mipmap/ic_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </android.support.v7.widget.Toolbar>
 
     <!--Content-->
     <ScrollView
@@ -45,11 +56,11 @@
                     android:src="@mipmap/ic_user" />
                 <!--<Name-->
                 <EditText
-                    android:id="@+id/edtSurName"
+                    android:id="@+id/edtIDstudent"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="ID number Student 13 digit :"
-                    android:inputType="text"
+                    android:inputType=""
                     android:textColorHint="@color/yellow" />
             </LinearLayout>
 
@@ -68,6 +79,7 @@
                     android:src="@mipmap/ic_user" />
                 <!--<Name-->
                 <EditText
+                    android:id="@+id/edtName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Name :"
@@ -92,6 +104,7 @@
                     android:src="@mipmap/ic_user" />
                 <!--<Name-->
                 <EditText
+                    android:id="@+id/edtSurName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Surname :"
@@ -111,12 +124,14 @@
                 android:textStyle="bold" />
 
             <RadioGroup
+                android:id="@+id/ragGender"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
                 <!--male-->
                 <RadioButton
+                    android:id="@+id/radMale"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="50dp"
@@ -124,6 +139,7 @@
 
                 <!--famle-->
                 <RadioButton
+                    android:id="@+id/radFemale"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="70dp"
@@ -147,10 +163,11 @@
                     android:src="@mipmap/ic_password" />
                 <!--<Name-->
                 <EditText
+                    android:id="@+id/edtPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Password :"
-                    android:inputType="text"
+                    android:inputType="textPassword"
                     android:textColorHint="@color/yellow" />
             </LinearLayout>
 
@@ -169,10 +186,11 @@
                     android:src="@mipmap/ic_password" />
                 <!--<Name-->
                 <EditText
+                    android:id="@+id/edtRePassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Confirm Password :"
-                    android:inputType="text"
+                    android:inputType="textPassword"
                     android:textColorHint="@color/yellow" />
             </LinearLayout>
 

@@ -6,5 +6,13 @@
     <string name="signin">เข้าสู่ระบบ :</string>
     <string name="forgotpassword">ลืมรหรัสผ่าน :</string>
     <string name="memu">เมนู :</string>
+    <string name="have_space">มีช่องว่าง</string>
+    <string name="message_have_space">กรุณากรอก ทุกช่องค่ะ</string>
+    <string name="id_false">รหัสนักศึกษาผิด</string>
+    <string name="mess_id_false">รหัสต้องมี 13 หลัก</string>
+    <string name="gender_false">คุณยังไม่ได้เลือก เพศ</string>
+    <string name="mass_gender_false">โปรดระบุเพศ</string>
+    <string name="pass_false">รหัสผ่านไม่เหมือนกัน</string>
+    <string name="mass_pass_false">กรณากรอกรหัสที่เหมือนกันค่ะ</string>
 
 </resources>
