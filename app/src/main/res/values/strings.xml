@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">CE BCS</string>
+    <string name="user">ผู้ใช้ :</string>
+    <string name="password">รหัสผ่าน:</string>
+    <string name="register">สร้างบัญชี</string>
+    <string name="signin">เข้าสู่ระบบ :</string>
+    <string name="forgotpassword">ลืมรหรัสผ่าน :</string>
+    <string name="memu">เมนู :</string>
+
+</resources>
