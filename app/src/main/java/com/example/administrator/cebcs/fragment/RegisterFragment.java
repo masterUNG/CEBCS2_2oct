@@ -5,6 +5,7 @@ import android.support.annotation.IdRes;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,25 +16,26 @@ import android.widget.RadioGroup;
 import com.example.administrator.cebcs.MainActivity;
 import com.example.administrator.cebcs.R;
 import com.example.administrator.cebcs.unity.MyAlert;
+import com.example.administrator.cebcs.unity.MyConstant;
+import com.example.administrator.cebcs.unity.MyPostUser;
+
+import java.time.LocalTime;
 
 /**
  * Created by Administrator on 12/9/2560.
  */
 
-public class RegisterFragment extends Fragment{
+public class RegisterFragment extends Fragment {
 
     //Explicit
     private String idStudentString, nameString, surnameString, genderString, passwordString, rePasswordString;
     private boolean aBoolean = true;
 
 
-
-
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view=inflater.inflate(R.layout.fragment_register,container,false);
+        View view = inflater.inflate(R.layout.fragment_register, container, false);
         return view;
         //OnCreevied
     }
@@ -100,7 +102,7 @@ public class RegisterFragment extends Fragment{
                         rePasswordString.equals("")) {
                     //True
                     MyAlert myAlert = new MyAlert(getActivity());
-                    myAlert.myDialog(getString(R.string.have_space), getString(R.string.message_have_space) );
+                    myAlert.myDialog(getString(R.string.have_space), getString(R.string.message_have_space));
 
                 } else if (idStudentString.length() != 13) {
                     //idStuudent False
@@ -113,7 +115,12 @@ public class RegisterFragment extends Fragment{
                     MyAlert myAlert = new MyAlert(getActivity());
                     myAlert.myDialog(getString(R.string.gender_false), getString(R.string.mass_gender_false));
                 } else if (passwordString.equals(rePasswordString)) {
+
+
                     //True Password
+                    uploadValueToServer();
+
+
                 } else {
                     //False Password
                     MyAlert myAlert = new MyAlert(getActivity());
@@ -121,20 +128,54 @@ public class RegisterFragment extends Fragment{
                 }
 
 
-
             } // on Click
         });
 
+
+    }
+
+    private void uploadValueToServer() {
+
+        String tag = "2octV1";
+        MyConstant myConstant = new MyConstant();
+
+        try {
+
+
+            //Show Log
+            Log.d(tag, "idStident ==> " + idStudentString);
+            Log.d(tag, "Name ==> " + nameString);
+            Log.d(tag, "Surname ==> " + surnameString);
+            Log.d(tag, "Gender ==> " + genderString);
+            Log.d(tag, "Password ==> " + passwordString);
+
+            MyPostUser myPostUser = new MyPostUser(getActivity());
+            myPostUser.execute(
+                    idStudentString,
+                    nameString,
+                    surnameString,
+                    genderString,
+                    passwordString,
+                    myConstant.getUrlPostUserString()
+            );
+            String result = myPostUser.get();
+            Log.d("2octV1", "Result ==>" + result);
+
+
+
+        } catch (Exception e) {
+            Log.d(tag, "e upload ==> " + e.toString());
+        }
 
 
     }
 
     private void toolbarController() {
         Toolbar toolbar = getView().findViewById(R.id.ToobarRegister);
-        ((MainActivity)getActivity()).setSupportActionBar(toolbar);
-        ((MainActivity)getActivity()).getSupportActionBar().setHomeButtonEnabled(true);
-        ((MainActivity)getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        ((MainActivity)getActivity()).getSupportActionBar().setTitle(getResources().getString(R.string.register));
+        ((MainActivity) getActivity()).setSupportActionBar(toolbar);
+        ((MainActivity) getActivity()).getSupportActionBar().setHomeButtonEnabled(true);
+        ((MainActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        ((MainActivity) getActivity()).getSupportActionBar().setTitle(getResources().getString(R.string.register));
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -142,7 +183,6 @@ public class RegisterFragment extends Fragment{
                 getActivity().getSupportFragmentManager().popBackStack();
             }
         });
-
 
 
     }
