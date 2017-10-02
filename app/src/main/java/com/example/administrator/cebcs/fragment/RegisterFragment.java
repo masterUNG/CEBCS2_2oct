@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import com.example.administrator.cebcs.MainActivity;
 import com.example.administrator.cebcs.R;
@@ -161,10 +162,21 @@ public class RegisterFragment extends Fragment {
             String result = myPostUser.get();
             Log.d("2octV1", "Result ==>" + result);
 
+            if (Boolean.parseBoolean(result)) {
+                Toast.makeText(getActivity(), "Upload Success", Toast.LENGTH_SHORT ).show();
+
+                getActivity().getSupportFragmentManager().popBackStack();
+
+            } else {
+                Toast.makeText(getActivity(), "Please Try Again Cannot Upload To Derver", Toast.LENGTH_SHORT ).show();
+            }
+
 
 
         } catch (Exception e) {
             Log.d(tag, "e upload ==> " + e.toString());
+
+
         }
 
 

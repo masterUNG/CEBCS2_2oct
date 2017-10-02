@@ -44,6 +44,7 @@
 
             <!--ID number Student 13 digit-->
             <LinearLayout
+                android:inputType="number"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -54,13 +55,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@mipmap/ic_user" />
-                <!--<Name-->
+                <!--<ID number Student 13 digit-->
                 <EditText
                     android:id="@+id/edtIDstudent"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="ID number Student 13 digit :"
-                    android:inputType=""
+                    android:hint="รหัสนักศึกษา 13 หลัก :"
+                    android:inputType="number"
                     android:textColorHint="@color/yellow" />
             </LinearLayout>
 
@@ -82,7 +83,7 @@
                     android:id="@+id/edtName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Name :"
+                    android:hint="ชื่อ :"
                     android:inputType="text"
                     android:textColorHint="@color/yellow" />
 
@@ -102,12 +103,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@mipmap/ic_user" />
-                <!--<Name-->
+                <!--<SurName-->
                 <EditText
                     android:id="@+id/edtSurName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Surname :"
+                    android:hint="นามสกุล :"
                     android:inputType="text"
                     android:textColorHint="@color/yellow" />
             </LinearLayout>
@@ -118,7 +119,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"
                 android:layout_marginTop="10dp"
-                android:text="Gender"
+                android:text="เพศ"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="@dimen/h1"
                 android:textStyle="bold" />
@@ -135,7 +136,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="50dp"
-                    android:text="Male" />
+                    android:text="ชาย" />
 
                 <!--famle-->
                 <RadioButton
@@ -143,7 +144,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="70dp"
-                    android:text="Famle" />
+                    android:text="หญิง" />
 
 
             </RadioGroup>
@@ -161,12 +162,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@mipmap/ic_password" />
-                <!--<Name-->
+                <!--<Password-->
                 <EditText
                     android:id="@+id/edtPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Password :"
+                    android:hint="รหัสผ่าน :"
                     android:inputType="textPassword"
                     android:textColorHint="@color/yellow" />
             </LinearLayout>
@@ -184,12 +185,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@mipmap/ic_password" />
-                <!--<Name-->
+                <!--<RePassword-->
                 <EditText
                     android:id="@+id/edtRePassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Confirm Password :"
+                    android:hint="ยืนยันรหัสผ่าน :"
                     android:inputType="textPassword"
                     android:textColorHint="@color/yellow" />
             </LinearLayout>

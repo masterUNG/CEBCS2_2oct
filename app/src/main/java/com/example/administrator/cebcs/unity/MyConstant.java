@@ -8,6 +8,12 @@ public class MyConstant {
 
     private String urlPostUserString = "http://androidthai.in.th/12Sep/addUserChris.php";
 
+    private String urlgetUserString = "http://androidthai.in.th/12Sep/getAllUserChris.php";
+
+    public String getUrlgetUserString() {
+        return urlgetUserString;
+    }
+
     public String getUrlPostUserString() {
         return urlPostUserString;
     }
