@@ -32,6 +32,7 @@ public class RegisterFragment extends Fragment{
 
 
 
+
     }//onActivityCreat
 
     private void toolbarController() {
