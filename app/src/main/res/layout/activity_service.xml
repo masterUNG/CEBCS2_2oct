@@ -21,7 +21,7 @@
 
         <!--Content Fragment-->
         <FrameLayout
-            android:id="@+id/contentFragmentService"
+            android:id="@+id/contentFragmentService123"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
 
