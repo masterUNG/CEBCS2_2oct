@@ -10,6 +10,13 @@ public class MyConstant {
 
     private String urlgetUserString = "http://androidthai.in.th/12Sep/getAllUserChris.php";
 
+    private String[] columnUserStrings = new String[]{"id", "idStudent",
+            "Name", "Surname", "Gender", "Password"};
+
+    public String[] getColumnUserStrings() {
+        return columnUserStrings;
+    }
+
     public String getUrlgetUserString() {
         return urlgetUserString;
     }

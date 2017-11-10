@@ -1,17 +1,27 @@
 package com.example.administrator.cebcs.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.administrator.cebcs.R;
+import com.example.administrator.cebcs.ServiceActivity;
 import com.example.administrator.cebcs.unity.MyAlert;
+import com.example.administrator.cebcs.unity.MyConstant;
+import com.example.administrator.cebcs.unity.MyGetAllData;
+import com.squareup.okhttp.OkHttpClient;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 /**
  * Created by Administrator on 11/9/2560.
@@ -69,6 +79,60 @@ public class MainFrangment extends Fragment {
     private void checkUsrtAndFass() {
 
         boolean bolStatus = true; // true ==> UserFalse
+        MyConstant myConstant = new MyConstant();
+
+        try {
+
+            MyGetAllData myGetAllData = new MyGetAllData(getActivity());
+            myGetAllData.execute(myConstant.getUrlgetUserString());
+            String resultJSON = myGetAllData.get();
+            Log.d("10novV1", "Result ==> " + resultJSON);
+            String[] columnStrings = myConstant.getColumnUserStrings();
+            String[] loginStrings = new String[columnStrings.length];
+            MyAlert myAlert = new MyAlert(getActivity());
+
+            JSONArray jsonArray = new JSONArray(resultJSON);
+            for (int i=0; i<jsonArray.length(); i+=1) {
+
+                JSONObject jsonObject = jsonArray.getJSONObject(i);
+                if (edtuserString.equals(jsonObject.getString(columnStrings[1]))) {
+
+                    bolStatus = false;
+                    for (int i1=0; i1<columnStrings.length; i1+=1) {
+
+                        loginStrings[i1] = jsonObject.getString(columnStrings[i1]);
+
+                    }
+
+                }
+
+            }   // for
+
+            if (bolStatus) {
+                myAlert.myDialog("ID False", "No This ID in my Database");
+            } else if (edtPasswordString.equals(loginStrings[5])) {
+
+                Toast.makeText(getActivity(), "Welcome " + loginStrings[2],
+                        Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(getActivity(), ServiceActivity.class);
+                intent.putExtra("Login", loginStrings);
+                getActivity().startActivity(intent);
+                getActivity().finish();
+
+            } else {
+
+                myAlert.myDialog("Password False", "Please Try Again Password False");
+
+            }
+
+
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
 
 
     }   // Main Class
