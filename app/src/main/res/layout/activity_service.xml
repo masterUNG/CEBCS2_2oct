@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context="com.example.administrator.cebcs.ServiceActivity">
 
+    <!--Content-->
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -18,6 +19,11 @@
             android:layout_height="?attr/actionBarSize"
             android:background="@color/colorPrimary"/>
 
+        <!--Content Fragment-->
+        <FrameLayout
+            android:id="@+id/contentFragmentService"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
 
 
     </LinearLayout>

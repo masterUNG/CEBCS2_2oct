@@ -4,6 +4,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.example.administrator.cebcs.fragment.ServiceFragment;
+
 public class ServiceActivity extends AppCompatActivity {
 
     //Explicit
@@ -19,6 +21,11 @@ public class ServiceActivity extends AppCompatActivity {
 
 //        Show Text
         showText();
+
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction()
+                    .add(R.id.contentFragmentService, new ServiceFragment()).commit();
+        }
 
 
     }   // Main Method
