@@ -68,10 +68,10 @@ public class MainFrangment extends Fragment {
 
     private void checkUsrtAndFass() {
 
+        boolean bolStatus = true; // true ==> UserFalse
 
 
-
-    }
+    }   // Main Class
 
     private void registerController() {
         TextView textView = getView().findViewById(R.id.txtRegister);
