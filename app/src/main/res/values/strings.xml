@@ -15,5 +15,8 @@
     <string name="pass_false">รหัสผ่านไม่เหมือนกัน</string>
     <string name="mass_pass_false">กรณากรอกรหัสที่เหมือนกันค่ะ</string>
 
+    <string name="open">Open Drawer</string>
+    <string name="close">Close Drawer</string>
+
 
 </resources>

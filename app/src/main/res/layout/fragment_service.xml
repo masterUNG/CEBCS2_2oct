@@ -19,6 +19,7 @@
 
         <!--Name-->
         <TextView
+            android:id="@+id/txtName"
             android:textSize="@dimen/h2"
             android:textStyle="bold"
             android:text="Name"
@@ -28,6 +29,7 @@
 
         <!--ID-->
         <TextView
+            android:id="@+id/txtID"
             android:textSize="@dimen/h2"
             android:layout_alignParentRight="true"
             android:textStyle="bold"
