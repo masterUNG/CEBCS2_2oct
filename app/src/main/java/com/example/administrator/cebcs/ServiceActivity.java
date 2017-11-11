@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 
 import com.example.administrator.cebcs.fragment.ServiceFragment;
@@ -36,13 +37,31 @@ public class ServiceActivity extends AppCompatActivity {
         createToolber();
 
 //        Add Fragmant
+        addFragmant(savedInstanceState);
+
+
+//        Exit Controller
+        exitController();
+
+
+    }   // Main Method
+
+    private void exitController() {
+        TextView textView = (TextView) findViewById(R.id.txtExit);
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+    }
+
+    private void addFragmant(Bundle savedInstanceState) {
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
                     .add(R.id.contentFragmentService123, ServiceFragment.serviceInstance(loginStrings)).commit();
         }
-
-
-    }   // Main Method
+    }
 
     private void createToolber() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolberService);

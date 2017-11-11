@@ -17,6 +17,16 @@
 
     <string name="open">Open Drawer</string>
     <string name="close">Close Drawer</string>
+    <string name="major">สาขา</string>
+    <string name="sector">ภาค</string>
+    <string name="my_class">ชั้น</string>
+    <string name="title_detail">ข้อมูลนักศึกษา</string>
+    <string name="ds_name">ชื่อ</string>
+    <string name="ds_surname">นามสกุล</string>
+    <string name="ds_id">รหัส</string>
+    <string name="ds_major">สาขา</string>
+    <string name="ds_sector">ภาค</string>
+    <string name="ds_class">ชั้น</string>
 
 
 </resources>

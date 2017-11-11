@@ -77,6 +77,7 @@
 
         <!--Detail Menu-->
         <LinearLayout
+            android:orientation="vertical"
             android:padding="15dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -96,6 +97,7 @@
 
                 <!--Text-->
                 <TextView
+                    android:layout_gravity="center_vertical"
                     android:text="Detail Student"
                     android:textSize="@dimen/h2"
                     android:layout_width="wrap_content"
@@ -118,6 +120,7 @@
 
                 <!--Text-->
                 <TextView
+                    android:layout_gravity="center_vertical"
                     android:text="Detail CE"
                     android:textSize="@dimen/h2"
                     android:layout_width="wrap_content"
@@ -141,6 +144,7 @@
 
                 <!--Text-->
                 <TextView
+                    android:layout_gravity="center_vertical"
                     android:text="Notification"
                     android:textSize="@dimen/h2"
                     android:layout_width="wrap_content"
@@ -164,6 +168,9 @@
 
                 <!--Text-->
                 <TextView
+                    android:clickable="true"
+                    android:id="@+id/txtExit"
+                    android:layout_gravity="center_vertical"
                     android:text="Exit"
                     android:textSize="@dimen/h2"
                     android:layout_width="wrap_content"

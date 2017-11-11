@@ -9,9 +9,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.administrator.cebcs.MainActivity;
@@ -29,7 +32,7 @@ import java.time.LocalTime;
 public class RegisterFragment extends Fragment {
 
     //Explicit
-    private String idStudentString, nameString, surnameString, genderString, passwordString, rePasswordString;
+    private String idStudentString, nameString, surnameString, genderString, passwordString, rePasswordString, majorString = "Major", sectorString = "Sector", classString = "Class";
     private boolean aBoolean = true;
 
 
@@ -54,8 +57,88 @@ public class RegisterFragment extends Fragment {
         //Radio Controller
         radioController();
 
+//        Major Controller
+        majorController();
+
+
+//        Sector Controller
+        sectorController();
+
+
+//        Class Controller
+        classController();
+
 
     }//onActivityCreat
+
+    private void classController() {
+        Spinner spinner = getView().findViewById(R.id.spnClass);
+        MyConstant myConstant = new MyConstant();
+        final String[] strings = myConstant.getClassStrings();
+        ArrayAdapter<String> stringArrayAdapter = new ArrayAdapter<String>(
+                getActivity(),
+                android.R.layout.simple_list_item_1,
+                strings
+        );
+        spinner.setAdapter(stringArrayAdapter);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                classString = strings[position];
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                classString = strings[0];
+            }
+        });
+    }
+
+    private void sectorController() {
+        Spinner spinner = getView().findViewById(R.id.spnSector);
+        MyConstant myConstant = new MyConstant();
+        final String[] strings = myConstant.getSectorStrings();
+        ArrayAdapter<String> stringArrayAdapter = new ArrayAdapter<String>(
+                getActivity(),
+                android.R.layout.simple_list_item_1,
+                strings
+        );
+        spinner.setAdapter(stringArrayAdapter);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                sectorString = strings[position];
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                sectorString = strings[0];
+            }
+        });
+    }
+
+    private void majorController() {
+        Spinner spinner = getView().findViewById(R.id.spnMajor);
+        MyConstant myConstant = new MyConstant();
+        final String[] strings = myConstant.getMajorStrings();
+        ArrayAdapter<String> stringArrayAdapter = new ArrayAdapter<String>(
+                getActivity(),
+                android.R.layout.simple_list_item_1,
+                strings
+        );
+        spinner.setAdapter(stringArrayAdapter);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                majorString = strings[position];
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                majorString = strings[0];
+            }
+        });
+    }
 
     private void radioController() {
         RadioGroup radioGroup = getView().findViewById(R.id.ragGender);
@@ -157,6 +240,9 @@ public class RegisterFragment extends Fragment {
                     surnameString,
                     genderString,
                     passwordString,
+                    majorString,
+                    sectorString,
+                    classString,
                     myConstant.getUrlPostUserString()
             );
             String result = myPostUser.get();

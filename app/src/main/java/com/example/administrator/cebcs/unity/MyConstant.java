@@ -11,7 +11,23 @@ public class MyConstant {
     private String urlgetUserString = "http://androidthai.in.th/12Sep/getAllUserChris.php";
 
     private String[] columnUserStrings = new String[]{"id", "idStudent",
-            "Name", "Surname", "Gender", "Password"};
+            "Name", "Surname", "Gender", "Password", "Major", "Sector", "Class"};
+
+    private String[] majorStrings = new String[]{"คอมพิวเตอร์ธุรกิจ", "บัญชี", "การตลาด", "การจัดการ"};
+    private String[] sectorStrings = new String[]{"วันอาทิตย์", "ค่ำ"};
+    private String[] classStrings = new String[]{"ห้อง 1/1", "ห้อง 1/2", "ห้อง 1/3", "ห้อง 1/4", "ห้อง 2/1", "ห้อง 2/2", "ห้อง 2/3", "ห้อง 2/4"};
+
+    public String[] getMajorStrings() {
+        return majorStrings;
+    }
+
+    public String[] getSectorStrings() {
+        return sectorStrings;
+    }
+
+    public String[] getClassStrings() {
+        return classStrings;
+    }
 
     public String[] getColumnUserStrings() {
         return columnUserStrings;

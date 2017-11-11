@@ -34,9 +34,12 @@ public class MyPostUser extends AsyncTask<String, Void, String>{
                     .add("Surname", strings[2])
                     .add("Gender", strings[3])
                     .add("Password", strings[4])
+                    .add("Major", strings[5])
+                    .add("Sector", strings[6])
+                    .add("Class", strings[7])
                     .build();
             Request.Builder builder = new Request.Builder();
-            Request request = builder.url(strings[5]).post(requestBody).build();
+            Request request = builder.url(strings[8]).post(requestBody).build();
             Response response = okHttpClient.newCall(request).execute();
             return response.body().string();
 
