@@ -5,10 +5,10 @@
 
     <!--Image-->
     <ImageView
-        android:scaleType="fitXY"
-        android:src="@drawable/backgr11"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/ic_launcher_buildingschool"
         android:layout_width="match_parent"
-        android:layout_height="150dp" />
+        android:layout_height="145dp" />
 
     <!--Show Name-->
     <RelativeLayout
