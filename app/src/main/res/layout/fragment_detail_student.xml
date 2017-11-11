@@ -168,7 +168,7 @@
 
             <!--Content-->
             <TextView
-                android:id="@+id/Class"
+                android:id="@+id/txtClass"
                 android:text="@string/ds_class"
                 android:textSize="@dimen/h2"
                 android:layout_weight="3"

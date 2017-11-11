@@ -10,12 +10,30 @@ public class MyConstant {
 
     private String urlgetUserString = "http://androidthai.in.th/12Sep/getAllUserChris.php";
 
+    private String urlGetSubject = "http://androidthai.in.th/12Sep/getAllSubject.php";
+
+    private String urlGetCE = "http://androidthai.in.th/12Sep/getAllCE.php";
+
+    private String urlGetCEwhereIDstudent = "http://androidthai.in.th/12Sep/getCEWhereIDstudent.php";
+
     private String[] columnUserStrings = new String[]{"id", "idStudent",
             "Name", "Surname", "Gender", "Password", "Major", "Sector", "Class"};
 
     private String[] majorStrings = new String[]{"คอมพิวเตอร์ธุรกิจ", "บัญชี", "การตลาด", "การจัดการ"};
     private String[] sectorStrings = new String[]{"วันอาทิตย์", "ค่ำ"};
     private String[] classStrings = new String[]{"ห้อง 1/1", "ห้อง 1/2", "ห้อง 1/3", "ห้อง 1/4", "ห้อง 2/1", "ห้อง 2/2", "ห้อง 2/3", "ห้อง 2/4"};
+
+    public String getUrlGetCEwhereIDstudent() {
+        return urlGetCEwhereIDstudent;
+    }
+
+    public String getUrlGetSubject() {
+        return urlGetSubject;
+    }
+
+    public String getUrlGetCE() {
+        return urlGetCE;
+    }
 
     public String[] getMajorStrings() {
         return majorStrings;

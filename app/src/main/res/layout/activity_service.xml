@@ -75,12 +75,39 @@
 
         </LinearLayout>
 
+
+
         <!--Detail Menu-->
         <LinearLayout
             android:orientation="vertical"
             android:padding="15dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
+            <!--Home-->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!--Icon-->
+                <ImageView
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_action_student"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <!--Text-->
+                <TextView
+                    android:id="@+id/txtHome"
+                    android:clickable="true"
+                    android:layout_gravity="center_vertical"
+                    android:text="Home"
+                    android:textSize="@dimen/h2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
 
             <!--Detail Student-->
             <LinearLayout
@@ -97,6 +124,8 @@
 
                 <!--Text-->
                 <TextView
+                    android:id="@+id/txtDatailStudent"
+                    android:clickable="true"
                     android:layout_gravity="center_vertical"
                     android:text="Detail Student"
                     android:textSize="@dimen/h2"
@@ -120,6 +149,7 @@
 
                 <!--Text-->
                 <TextView
+                    android:id="@+id/txtCEdetail"
                     android:layout_gravity="center_vertical"
                     android:text="Detail CE"
                     android:textSize="@dimen/h2"

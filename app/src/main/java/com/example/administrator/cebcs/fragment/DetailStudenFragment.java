@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.example.administrator.cebcs.R;
 
@@ -14,6 +15,45 @@ import com.example.administrator.cebcs.R;
  */
 
 public class DetailStudenFragment extends Fragment {
+
+    private String[] loginStrings;
+
+    public static DetailStudenFragment detailStudentInstance(String[] loginStrings) {
+        DetailStudenFragment detailStudenFragmentv = new DetailStudenFragment();
+        Bundle bundle = new Bundle();
+        bundle.putStringArray("Login", loginStrings);
+        detailStudenFragmentv.setArguments(bundle);
+        return detailStudenFragmentv;
+    }
+
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
+//        Get Value From Argument
+        loginStrings = getArguments().getStringArray("Login");
+
+//        Show Text
+        showText();
+    }
+
+    private void showText() {
+        TextView nameTextView = getView().findViewById(R.id.txtName);
+        TextView surnameTextView = getView().findViewById(R.id.txtSurname);
+        TextView idTextView = getView().findViewById(R.id.txtID);
+        TextView majorTextView = getView().findViewById(R.id.txtMajor);
+        TextView sectorTextView = getView().findViewById(R.id.txtSector);
+        TextView classTextView = getView().findViewById(R.id.txtClass);
+
+        nameTextView.setText(loginStrings[2]);
+        surnameTextView.setText(loginStrings[3]);
+        idTextView.setText(loginStrings[1]);
+        majorTextView.setText(loginStrings[6]);
+        sectorTextView.setText(loginStrings[7]);
+        classTextView.setText(loginStrings[8]);
+
+    }
 
     @Nullable
     @Override

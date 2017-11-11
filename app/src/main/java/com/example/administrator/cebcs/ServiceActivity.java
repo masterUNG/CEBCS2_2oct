@@ -13,6 +13,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.administrator.cebcs.fragment.CEdetailFragment;
+import com.example.administrator.cebcs.fragment.DetailStudenFragment;
 import com.example.administrator.cebcs.fragment.ServiceFragment;
 
 public class ServiceActivity extends AppCompatActivity {
@@ -43,8 +45,58 @@ public class ServiceActivity extends AppCompatActivity {
 //        Exit Controller
         exitController();
 
+//        Detail Controller
+        detailController();
+
+//        Home Controller
+        homeController();
+
+//        CE Controller
+        CEController();
+
 
     }   // Main Method
+
+    private void CEController() {
+        TextView textView = (TextView) findViewById(R.id.txtCEdetail);
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                getSupportFragmentManager().beginTransaction().replace(R.id.contentFragmentService123, CEdetailFragment.ceDetailInstance(loginStrings)).commit();
+                drawerLayout.closeDrawers();
+
+            }
+        });
+    }
+
+    private void homeController() {
+        TextView textView = (TextView) findViewById(R.id.txtHome);
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getSupportFragmentManager().beginTransaction().replace(R.id.contentFragmentService123, ServiceFragment.serviceInstance(loginStrings)).commit();
+                drawerLayout.closeDrawers();
+            }
+        });
+    }
+
+
+    @Override
+    public void onBackPressed() {
+
+    }
+
+    private void detailController() {
+        TextView textView = (TextView) findViewById(R.id.txtDatailStudent);
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getSupportFragmentManager().beginTransaction().replace(R.id.contentFragmentService123, DetailStudenFragment.detailStudentInstance(loginStrings)).commit();
+                drawerLayout.closeDrawers();
+            }
+        });
+    }
 
     private void exitController() {
         TextView textView = (TextView) findViewById(R.id.txtExit);
